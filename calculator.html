@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+  <div class="title">Basic - Calculator</div>
+  <p class="ress css-res"></p>
+<div class="all-calci">
+  <p>
+  <button class="number" onclick="
+    updatecalci('1')">1
+  </button>
+
+  <button class="number" onclick="
+    updatecalci('2')">2
+  </button>
+  
+  <button class="number" onclick="
+    updatecalci('3')">3
+  </button>
+  
+  <button class="operation" onclick="
+    updatecalci('+')">+
+  </button>
+</p>
+<p>
+  <button class="number" onclick="
+    updatecalci('4')">4
+  </button>
+
+  <button class="number" onclick="
+   updatecalci('5')">5
+  </button>
+  
+  <button class="number" onclick="
+    updatecalci('6')">6
+  </button>
+  
+  <button  class="operation" onclick="
+   updatecalci('-')">-
+  </button>
+</p>
+<p>
+  <button class="number" onclick="
+    updatecalci('7')">7
+  </button>
+
+  <button class="number" onclick="
+    updatecalci('8')">8
+  </button>
+  
+  <button class="number" onclick="
+    updatecalci('9')">9
+  </button>
+  
+  <button class="operation" onclick="
+   updatecalci('*')">*
+  </button>
+</p>
+<p>
+  <button class="number" onclick="
+   updatecalci('0')">0
+  </button>
+
+  <button class="number" onclick="
+    updatecalci('.')">.
+  </button>
+  
+  <button class="number" onclick="
+    calculation = eval(calculation);
+    display()
+    localStorage.setItem('calculation', calculation);">=
+  </button>
+  
+  <button class="operation" onclick="
+   updatecalci('/')">/
+  </button>
+</p>
+<p>
+  <button class="number clear" onclick="
+  calculation=' '
+  display()
+  localStorage.setItem('calculation', calculation);">Clear</button>
+</p>
+</div>
+  <script>
+    let calculation = localStorage.getItem('calculation') || '';
+    display();
+    function updatecalci(n){
+      calculation+=n;
+      display();
+      localStorage.setItem('calculation', calculation);
+    }
+    function display(){
+      document.querySelector('.ress').innerHTML = calculation;
+    }
+  </script>
+</body>
+</html>
